@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import Children from './Children.vue'
+import Children from './ComponentChildren.vue'
 
 const count = ref(10)
 </script>

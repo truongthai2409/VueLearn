@@ -2,9 +2,11 @@
     <div class="cart-container">
         <h1>Giỏ hàng</h1>
 
+
         <div v-if="cartStore.items.length === 0" class="empty-cart">
             Giỏ hàng trống
         </div>
+
 
         <div v-else class="cart-items">
             <div v-for="item in cartStore.items" :key="item.id" class="cart-item">
@@ -54,6 +56,8 @@ const formatPrice = (price: number) => {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+
+
 }
 
 .empty-cart {

@@ -14,6 +14,7 @@ import NotificationToast from '@/components/NotificationToast.vue'
         <RouterLink to="/todo">Todo List</RouterLink>
         <RouterLink to="/props">Props</RouterLink>
         <RouterLink to="/cart">Giỏ hàng</RouterLink>
+        <RouterLink to="/dashboard">Dashboard</RouterLink>
       </nav>
     </div>
   </header>
