@@ -31,21 +31,20 @@ const toggleTodo = (id: number) => {
     todo.completed = !todo.completed
   }
 }
+let count = ref(0)
+const alertShow = () => {
+  count.value += 1;
+}
 </script>
 
 <template>
   <div class="todo-list">
     <h2>Todo List</h2>
-    
+
     <!-- Form thêm todo mới -->
     <div class="add-todo">
-      <input 
-        v-model="newTodo"
-        @keyup.enter="addTodo"
-        type="text"
-        placeholder="Thêm công việc mới..."
-        class="todo-input"
-      >
+      <input v-model="newTodo" @keyup.enter="addTodo" type="text" placeholder="Thêm công việc mới..."
+        class="todo-input">
       <button @click="addTodo" class="add-button">Thêm</button>
     </div>
 
@@ -53,12 +52,7 @@ const toggleTodo = (id: number) => {
     <ul class="todos">
       <li v-for="todo in todos" :key="todo.id" class="todo-item">
         <div class="todo-content">
-          <input 
-            type="checkbox"
-            :checked="todo.completed"
-            @change="toggleTodo(todo.id)"
-            class="todo-checkbox"
-          >
+          <input type="checkbox" :checked="todo.completed" @change="toggleTodo(todo.id)" class="todo-checkbox">
           <span :class="{ completed: todo.completed }">{{ todo.text }}</span>
         </div>
         <button @click="removeTodo(todo.id)" class="delete-button">Xóa</button>
@@ -69,6 +63,8 @@ const toggleTodo = (id: number) => {
     <p v-if="todos.length === 0" class="empty-message">
       Chưa có công việc nào. Hãy thêm công việc mới!
     </p>
+    <button @click="alertShow">alert</button>
+    <p>{{ count }}</p>
   </div>
 </template>
 
@@ -163,4 +159,4 @@ h2 {
   color: #666;
   font-style: italic;
 }
-</style> 
+</style>

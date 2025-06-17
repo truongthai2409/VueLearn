@@ -22,6 +22,16 @@ const router = createRouter({
       name: 'todo',
       component: () => import('../views/TodoListView.vue'),
     },
+    {
+      path: '/props',
+      name: 'props',
+      component: () => import('../components/ComponentCha.vue'),
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('../views/CartView.vue'),
+    },
   ],
 })
 

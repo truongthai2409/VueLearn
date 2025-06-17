@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import NotificationToast from '@/components/NotificationToast.vue'
 </script>
 
 <template>
@@ -8,14 +9,17 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/">Trang chủ</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/todo">Todo List</RouterLink>
+        <RouterLink to="/props">Props</RouterLink>
+        <RouterLink to="/cart">Giỏ hàng</RouterLink>
       </nav>
     </div>
   </header>
 
   <RouterView />
+  <NotificationToast />
 </template>
 
 <style scoped>
@@ -34,24 +38,30 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  padding: 1rem;
+  background: #f8f8f8;
 }
 
 nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
+  text-decoration: none;
+  color: #666;
+  font-size: 1.1em;
 }
 
 nav a:first-of-type {
   border: 0;
+}
+
+nav a:hover {
+  color: #42b983;
+}
+
+nav a.router-link-active {
+  color: #42b983;
+  font-weight: bold;
 }
 
 main {
